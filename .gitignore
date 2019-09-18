@@ -160,3 +160,7 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+
+### Personal values
+
+.idea

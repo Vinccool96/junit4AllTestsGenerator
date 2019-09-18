@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+    id "com.gradle.plugin-publish" version "0.10.1"
+    id "java-gradle-plugin"
+}
+
+group 'vinccool96.junit.alltestsgenerator.junit4'
+version '1.0'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+gradlePlugin {
+    plugins {
+        junit4AllTestsGeneratorPlugin {
+            id = 'vinccool96.junit.alltestgenerator.junit4'
+            displayName = 'Vinccool96 junit4 alltest genereator'
+            description = 'Creates the TestSuite AllTests'
+            implementationClass = 'vinccool96.junit.alltestsgenerator.junit4.generator.Generator'
+        }
+    }
+}
+
+pluginBundle {
+    website = 'https://github.com/Vinccool96/junit4AllTestsGenerator'
+    vcsUrl = 'https://github.com/Vinccool96/junit4AllTestsGenerator.git'
+    tags = ['junit4', 'suite', 'generate']
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
