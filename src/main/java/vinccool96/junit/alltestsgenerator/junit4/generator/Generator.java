@@ -13,6 +13,8 @@ public class Generator {
 
     private static final String JAVA = ".java";
 
+    private static final String KOTLIN = ".kt";
+
     private static final String ALL_TESTS = "AllTests";
 
     private String currentFolder;
@@ -79,7 +81,7 @@ public class Generator {
     private String getClassString(File testFile) {
         String name = testFile.getName();
         String CLASS = ".class";
-        return name.replace(JAVA, CLASS);
+        return name.replace(JAVA, CLASS).replace(KOTLIN, CLASS);
     }
 
     private LinkedList<String> getImportStrings(ArrayList<File> testFiles) {
